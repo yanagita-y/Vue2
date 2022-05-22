@@ -3,20 +3,21 @@
   <div class="form">
     <div class="header">
       <p id="step">STEP1</p>
+      <h1>{{ message }}</h1>
       <p id="inst">お客様の情報を入力してください</p>
     </div>
     <div class="body">
       <p class="genre">-性別-</p>
-        <label><input type="radio" name="gender" value="男性" @change="updateGender">男性</label>
-        <label><input type="radio" name="gender" value="女性" @change="updateGender">女性</label>
+        <label><input type="radio" v-model="gender" value="男性" @change="updateGender">男性</label>
+        <label><input type="radio" v-model="gender" value="女性" @change="updateGender">女性</label>
       <p class="genre">-生年月日-</p>
-      <select name="year" id="id_year" @change="updateYear">
+      <select v-model="year" id="id_year" @change="updateYear">
         <option v-for="(year, key) in years" :key="key">{{ year }}</option>
       </select>年
-      <select name="month" id="id_month" @change="updateMonth">
+      <select v-model="month" id="id_month" @change="updateMonth">
         <option v-for="(month, key) in months" :key="key">{{ month }}</option>
       </select>月
-      <select name="day" id="id_day" @change="updateDay">
+      <select v-model="day" id="id_day" @change="updateDay">
         <option v-for="(day, key) in days" :key="key">{{ day }}</option>
       </select>日
     </div>
@@ -61,6 +62,40 @@ export default {
       months: monthList,
       days: dayList,
     }
+  },
+  computed : {
+    gender:{
+      get() {
+        return this.$store.state.gender;
+      },
+      set(value) {
+        this.$store.dispatch('getGender', value);
+      }
+    },
+    year:{
+      get() {
+        return this.$store.state.year;
+      },
+      set(value) {
+        this.$store.dispatch('getYear', value);
+      }
+    },
+    month:{
+      get() {
+        return this.$store.state.month;
+      },
+      set(value) {
+        this.$store.dispatch('getMonth', value);
+      }
+    },
+    day:{
+      get() {
+        return this.$store.state.day;
+      },
+      set(value) {
+        this.$store.dispatch('getDay', value);
+      },
+    },
   },
   methods: {
     updateGender (e) {

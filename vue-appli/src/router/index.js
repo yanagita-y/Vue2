@@ -27,9 +27,12 @@ const routes = [
     path: '/questionnaire2',
     name: 'questionnaire2',
     component: () => import('../views/Questionnaire2View.vue')
+  },
+  {
+    path: '/questionnaire3',
+    name: 'questionnaire3',
+    component: () => import('../views/Questionnaire3View.vue')
   }
-
-
 ]
 
 const router = new VueRouter({
