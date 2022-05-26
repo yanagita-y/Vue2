@@ -40,28 +40,28 @@
   export default {
     computed:{
       gender : function() {
-        return this.$store.state.gender
+        return this.$store.getters.gender
       },
       year : function() {
-        return this.$store.state.year
+        return this.$store.getters.year
       },
       month : function() {
-        return this.$store.state.month
+        return this.$store.getters.month
       },
       day : function() {
-        return this.$store.state.day
+        return this.$store.getters.day
       },
       question1 : function() {
-        return this.$store.state.question1
+        return this.$store.getters.question1
       },
       question2 : function() {
-        return this.$store.state.question2
+        return this.$store.getters.question2
       },
       question3 : function() {
-        return this.$store.state.question3
+        return this.$store.getters.question3
       },
       step3Text : function() {
-        return this.$store.state.step3Text;
+        return this.$store.getters.step3Text;
       }
     }
   }

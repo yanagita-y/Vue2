@@ -66,7 +66,7 @@ export default {
   computed : {
     gender:{
       get() {
-        return this.$store.state.gender;
+        return this.$store.getters.gender;
       },
       set(value) {
         this.$store.dispatch('getGender', value);
@@ -74,7 +74,7 @@ export default {
     },
     year:{
       get() {
-        return this.$store.state.year;
+        return this.$store.getters.year;
       },
       set(value) {
         this.$store.dispatch('getYear', value);
@@ -82,7 +82,7 @@ export default {
     },
     month:{
       get() {
-        return this.$store.state.month;
+        return this.$store.getters.month;
       },
       set(value) {
         this.$store.dispatch('getMonth', value);
@@ -90,7 +90,7 @@ export default {
     },
     day:{
       get() {
-        return this.$store.state.day;
+        return this.$store.getters.day;
       },
       set(value) {
         this.$store.dispatch('getDay', value);

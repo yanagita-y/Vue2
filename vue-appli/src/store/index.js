@@ -15,7 +15,14 @@ export default new Vuex.Store({
     step3Text: ''
   },
   getters: { // 2
-    keyword: state => state.keyword
+    gender: state => state.gender,
+    year: state => state.year,
+    month: state => state.month,
+    day: state => state.day,
+    question1: state => state.question1,
+    question2: state => state.question2,
+    question3: state => state.question3,
+    step3Text: state => state.step3Text
   },
   mutations: { // 3
     setGender: function(state, gender){

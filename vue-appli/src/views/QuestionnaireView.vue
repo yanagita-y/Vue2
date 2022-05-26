@@ -37,7 +37,7 @@
     computed:{
     question1:{
       get() {
-        return this.$store.state.question1;
+        return this.$store.getters.question1;
       },
       set(value) {
         this.$store.dispatch('getQuestion1', value);
@@ -45,7 +45,7 @@
     },
     question2:{
       get() {
-        return this.$store.state.question2;
+        return this.$store.getters.question2;
       },
       set(value) {
         this.$store.dispatch('getQuestion2', value);
@@ -53,7 +53,7 @@
     },
     question3:{
       get() {
-        return this.$store.state.question3;
+        return this.$store.getters.question3;
       },
       set(value) {
         this.$store.dispatch('getQuestion3', value);

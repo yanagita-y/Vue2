@@ -21,7 +21,7 @@
     computed:{
     step3Text:{
       get() {
-        return this.$store.state.step3Text;
+        return this.$store.getters.step3Text;
       },
       set(value) {
         this.$store.dispatch('getStep3Text', value);
